@@ -1,0 +1,60 @@
+@import "helpers/mixins";
+@import "base/index";
+
+$tablet: 650px;
+$desktop: 950px;
+$desktop-large: 1170px;
+
+.container {
+    margin: 0 auto;
+    @include breakpoint(medium)     { width: $tablet; }
+    @include breakpoint(desktop)    { width: $desktop; }
+    @include breakpoint(large)      { width: $desktop-large; }
+}
+
+.info-block {
+    margin: 0 auto;
+    padding: 30px 40px;
+    width: 300px;
+    text-align: center;
+    @include breakpoint(medium) { width: 610px; }
+
+    .info-block-header {
+        margin-bottom: 15px;
+    }
+
+    .info-block-title {
+        margin-top: 4px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
+
+.btn {
+    padding: 7px 42px 8px 33px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    @include linearGradient(#f79535, #f47b31);
+
+    &:hover {
+        @include linearGradient(#f47b31, #f79535);
+    }
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 18px;
+    width: 32px;
+    height: 26px;
+    background-repeat: no-repeat;
+    &.icon-btn { background-image: url("../img/btn-icon.png"); }
+}
+

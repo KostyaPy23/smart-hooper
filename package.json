@@ -1,0 +1,26 @@
+{
+  "name": "smart-hooper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KostyaPy23/smart-hooper.git"
+  },
+  "author": "kostia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KostyaPy23/smart-hooper/issues"
+  },
+  "homepage": "https://github.com/KostyaPy23/smart-hooper#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "path": "^0.12.7"
+  }
+}

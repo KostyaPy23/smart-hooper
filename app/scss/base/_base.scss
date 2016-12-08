@@ -1,0 +1,72 @@
+body {
+    background: #ffffff;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+    transition: color .25s;
+    &:hover { color: #f69433; }
+
+    &:active,
+    &:hover { outline: 0; }
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+figure {
+    margin: 0;
+}
+
+.el-center {
+    text-align: center;
+}
+
+img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
