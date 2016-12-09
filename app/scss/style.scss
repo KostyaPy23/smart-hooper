@@ -4,10 +4,11 @@
 
 $tablet: 650px;
 $desktop: 950px;
-$desktop-large: 1260px;
+$desktop-large: 1290px;
 
 .container {
     margin: 0 auto;
+    padding: 0 15px;
     @include breakpoint(medium)     { width: $tablet; }
     @include breakpoint(desktop)    { width: $desktop; }
     @include breakpoint(large)      { width: $desktop-large; }
@@ -63,6 +64,10 @@ $desktop-large: 1260px;
         background: transparent;
         text-shadow: none;
         letter-spacing: 0.7px;
+        @media (max-width: 440px) {
+            font-size: 0;
+            padding: 10px;
+        }
 
         &.active {
             font-weight: 700;
@@ -79,7 +84,6 @@ $desktop-large: 1260px;
             }
         }
     }
-
 
     &.btn-prev {
         float: left;
@@ -125,10 +129,11 @@ $step-active-bg: #f47920;
 $step-color: #ffffff;
 
 .question-area-entry {
+    width: 300px;
     text-align: center;
     margin: 0 auto 40px;
 
-    @include breakpoint(medium) { width: 680px; }
+    @include breakpoint(medium) { width: 500px; }
     @include breakpoint(desktop) { width: 760px; }
 
     .question-img { margin-bottom: 22px; }
@@ -141,26 +146,44 @@ $step-color: #ffffff;
 
         .steps-item {
             position: relative;
-            display: inline-block;
+            display: none;
             width: 50px;
             height: 50px;
             font: 600 18px/50px Arial, sans-serif;
             border-radius: 50%;
             background: $step-passive-bg;
             color: $step-color;
-            &.current { background: $step-active-bg; }
+            @include breakpoint(medium) {
+                display: inline-block;
+            }
+
+            &.current {
+                background: $step-active-bg;
+                display: inline-block;
+            }
+
             &:not(:last-of-type) {
-                margin-right: 100px;
+                //margin-right: 40px;
                 &:after {
+                    display: none;
                     content: "";
                     position: absolute;
                     top: 50%;
-                    width: 150px;
+                    width: 90px;
                     height: 4px;
                     z-index: -1;
                     background: $step-passive-bg;
                     -webkit-transform: translateY(-50%);
                     transform: translateY(-50%);
+                }
+                @include breakpoint(medium) {
+                    margin-right: 40px;
+                    &:after { display: block; }
+                }
+
+                @include breakpoint(desktop) {
+                    margin-right: 100px;
+                    &:after { width: 150px; }
                 }
             }
         }
