@@ -36,6 +36,7 @@ $large: 1315px;
 // Gradient
 // @description: make cross-browser gradient
 //
+
 @mixin linearGradient($top, $bottom){
     background: $top; /* Old browsers */
     background: -moz-linear-gradient(top,  $top 0%, $bottom 100%);
@@ -51,6 +52,7 @@ $large: 1315px;
 // Clearfix
 // @description: clear stream from floated elements
 //
+
 @mixin clearfix() {
     position: relative;
     &:before,
