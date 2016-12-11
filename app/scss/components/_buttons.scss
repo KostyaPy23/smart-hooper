@@ -1,0 +1,91 @@
+/* Buttons */
+/* -------------------- */
+
+.btn {
+    display: inline-block;
+    padding: 7px 42px 8px 33px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.4px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(150, 150, 150, 1);
+    border-radius: 4px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    @include linearGradient(#f79535, #f47b31);
+
+    &:hover {
+        color: #ffffff;
+        @include linearGradient(#f47b31, #f79535);
+    }
+
+
+    &.btn-prev,
+    &.btn-next {
+        border-radius: 5px;
+        padding: 13px 28px;
+        letter-spacing: 0.7px;
+        font-weight: 700;
+        border-top: 1px solid #eb8522;
+        border-left: 1px solid #eb8522;
+        border-right: 1px solid #eb8522;
+        border-bottom: 1px solid #bd6b38;
+        color: #ffffff;
+        text-shadow: 0 1px 1px rgba(150, 150, 150, 1);
+        @include linearGradient(#f79535, #f47b31);
+
+        &:hover {
+            @include linearGradient(#f47b31, #f79535);
+        }
+        @media (max-width: 440px) {
+            font-size: 0;
+            padding: 10px;
+        }
+
+        &.disabled {
+            border: 1px solid #055197;
+            color: #055197;
+            font-weight: 400;
+            background: transparent;
+            text-shadow: none;
+        }
+    }
+
+    &.btn-prev {
+        float: left;
+        text-align: left;
+    }
+
+    &.btn-next {
+        float: right;
+        text-align: right;
+    }
+}
+
+.icon-prev,
+.icon-next {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 21px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    border-color: #ffffff;
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.3);
+    #{".disabled"} & {
+        border: 1px solid #055197;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.icon-prev { margin-right: 20px; }
+.icon-next { margin-left: 20px; padding-left: 3px; }

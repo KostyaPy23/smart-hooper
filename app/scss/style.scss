@@ -1,6 +1,11 @@
+// Helpers
 @import "helpers/mixins";
-@import "base/index";
-@import "font-icons";
+// Base
+@import "base/reset";
+@import "base/base";
+// Components
+@import "components/buttons";
+@import "libs/font-icons";
 
 $tablet: 650px;
 $desktop: 950px;
@@ -12,6 +17,15 @@ $desktop-large: 1290px;
     @include breakpoint(medium)     { width: $tablet; }
     @include breakpoint(desktop)    { width: $desktop; }
     @include breakpoint(large)      { width: $desktop-large; }
+}
+
+.tab-pane {
+    display: none;
+    visibility: hidden;
+    &.active {
+        display: block;
+        visibility: visible;
+    }
 }
 
 .info-block {
@@ -32,91 +46,6 @@ $desktop-large: 1290px;
     }
 }
 
-.btn {
-    display: inline-block;
-    padding: 7px 42px 8px 33px;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: Arial, sans-serif;
-    letter-spacing: 1.4px;
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0 1px 1px rgba(150, 150, 150, 1);
-    border-radius: 4px;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    @include linearGradient(#f79535, #f47b31);
-
-    &:hover {
-        color: #ffffff;
-        @include linearGradient(#f47b31, #f79535);
-    }
-
-
-    &.btn-prev,
-    &.btn-next {
-        border-radius: 5px;
-        padding: 13px 28px;
-        border: 1px solid #055197;
-        color: #055197;
-        font-weight: 400;
-        background: transparent;
-        text-shadow: none;
-        letter-spacing: 0.7px;
-        @media (max-width: 440px) {
-            font-size: 0;
-            padding: 10px;
-        }
-
-        &.active {
-            font-weight: 700;
-            border-top: 1px solid #eb8522;
-            border-left: 1px solid #eb8522;
-            border-right: 1px solid #eb8522;
-            border-bottom: 1px solid #bd6b38;
-            color: #ffffff;
-            text-shadow: 0 1px 1px rgba(150, 150, 150, 1);
-            @include linearGradient(#f79535, #f47b31);
-
-            &:hover {
-                @include linearGradient(#f47b31, #f79535);
-            }
-        }
-    }
-
-    &.btn-prev {
-        float: left;
-        text-align: left;
-    }
-
-    &.btn-next {
-        float: right;
-        text-align: right;
-    }
-}
-
-.icon-prev,
-.icon-next {
-    position: relative;
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    line-height: 21px;
-    border: 1px solid #055197;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 20px;
-
-    #{".active"} & {
-        border-color: #ffffff;
-        -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.3);
-        box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.3);
-    }
-}
-
-.icon-prev { margin-right: 20px; }
-.icon-next { margin-left: 20px; padding-left: 3px; }
 
 // Questions
 .question-area {
@@ -147,22 +76,23 @@ $step-color: #ffffff;
         .steps-item {
             position: relative;
             display: inline-block;
-            width: 20px;
-            height: 20px;
-            font: 600 14px/21px Arial, sans-serif;
-            border-radius: 50%;
-            background: $step-passive-bg;
-            color: $step-color;
-            @include breakpoint(medium) {
-                width: 50px;
-                height: 50px;
-                font: 600 18px/50px Arial, sans-serif;
+            vertical-align: top;
+            a {
+                display: block;
+                width: 20px;
+                height: 20px;
+                font: 600 14px/21px Arial, sans-serif;
+                border-radius: 50%;
+                background: $step-passive-bg;
+                color: $step-color;
+                @include breakpoint(medium) {
+                    width: 50px;
+                    height: 50px;
+                    font: 600 18px/50px Arial, sans-serif;
+                }
             }
 
-            &.current {
-                background: $step-active-bg;
-                display: inline-block;
-            }
+            &.active a { background: $step-active-bg; }
 
             &:not(:last-of-type) {
                 &:after {
