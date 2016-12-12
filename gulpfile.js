@@ -3,12 +3,12 @@ var gulp = require('gulp'),
     // sourcemaps = require("gulp-sourcemaps"),
     browserSync = require('browser-sync'),
     path = require("path"),
-    // concat = require('gulp-concat'),
-    // uglify = require('gulp-uglifyjs'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglifyjs'),
     del = require('del');
-    // imagemin = require('gulp-imagemin'),
-    // pngquant = require('imagemin-pngquant'),
-    // cache = require('gulp-cache');
+// imagemin = require('gulp-imagemin'),
+// pngquant = require('imagemin-pngquant'),
+// cache = require('gulp-cache');
 
 
 // Browser Sync Task
@@ -22,6 +22,23 @@ gulp.task("browser-sync", function () {
         },
         notify: false
     });
+});
+
+// Copy jQuery library
+gulp.task("jquery", function () {
+    return gulp.src('node_modules/jquery/dist/*')
+        .pipe(gulp.dest('app/js/jquery/'))
+});
+
+
+gulp.task("scripts", function () {
+    return gulp.src([
+        'node_modules/twitter-bootstrap-wizard/bootstrap/js/bootstrap.min.js',
+        'node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js'
+    ])
+        .pipe(concat('libs.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('app/js'));
 });
 
 

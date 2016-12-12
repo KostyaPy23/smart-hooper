@@ -9,36 +9,19 @@
             previousSelector: '.wizard .btn-prev',
 
             onTabClick: function (tab, navigation, index) {
-                // alert('on tab click disabled');
-                // return false;
+
             },
 
-            onNext: function(tab, navigation, index) {
-                if (clicked($(".variants .variant-item")) == false) {
-                    return false;
-                }
+            onNext: function (tab, navigation, index) {
+
             }
         });
 
-        function clicked(element) {
-            var count = 0;
-
-            element.click(function() {
-                count++;
-                if (count > 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            });
-        }
-
-
-        $('.variants').each(function() {
+        $('.variants').each(function () {
             var $item = $(this).find('.variant-item');
             var count = 0;
 
-            $item.click(function() {
+            $item.click(function () {
                 var $variantText = $(this).find(".variant-caption");
                 var $self = $(this);
                 count++;
@@ -55,7 +38,6 @@
                 return false;
             });
         });
-
     });
 
 }(jQuery));
