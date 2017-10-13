@@ -31,15 +31,15 @@ gulp.task("jquery", function () {
 });
 
 
-gulp.task("scripts", function () {
-    return gulp.src([
-        'node_modules/twitter-bootstrap-wizard/bootstrap/js/bootstrap.min.js',
-        'node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js'
-    ])
-        .pipe(concat('libs.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('app/js'));
-});
+// gulp.task("scripts", function () {
+//     return gulp.src([
+//         'node_modules/twitter-bootstrap-wizard/bootstrap/js/bootstrap.min.js',
+//
+//     ])
+//         .pipe(concat('libs.min.js'))
+//         .pipe(uglify())
+//         .pipe(gulp.dest('app/js'));
+// });
 
 
 // Watch Sass|Scss files
