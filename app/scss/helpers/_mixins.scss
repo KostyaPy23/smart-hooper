@@ -13,23 +13,23 @@ $large: 1315px;
 //
 
 @mixin breakpoint($size) {
-    @if $size == small {
-        @media (min-width: $small) {
-            @content;
-        }
-    } @else if $size == medium {
-        @media (min-width: $medium) {
-            @content;
-        }
-    } @else if $size == desktop {
-        @media (min-width: $desktop) {
-            @content;
-        }
-    } @else if $size == large {
-        @media (min-width: $large) {
-            @content;
-        }
+  @if $size == small {
+    @media (min-width: $small) {
+      @content;
     }
+  } @else if $size == medium {
+    @media (min-width: $medium) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  } @else if $size == large {
+    @media (min-width: $large) {
+      @content;
+    }
+  }
 }
 
 //
@@ -37,15 +37,15 @@ $large: 1315px;
 // @description: make cross-browser gradient
 //
 
-@mixin linearGradient($top, $bottom){
-    background: $top;
-    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom));
-    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%);
-    background: -o-linear-gradient(top,  $top 0%,$bottom 100%);
-    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%);
-    background: linear-gradient(to bottom,  $top 0%,$bottom 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+@mixin linearGradient($top, $bottom) {
+  background: $top;
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom));
+  background: -webkit-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -o-linear-gradient(top, $top 0%, $bottom 100%);
+  background: -ms-linear-gradient(top, $top 0%, $bottom 100%);
+  background: linear-gradient(to bottom, $top 0%, $bottom 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
 }
 
 //
@@ -54,13 +54,13 @@ $large: 1315px;
 //
 
 @mixin clearfix() {
-    position: relative;
-    &:before,
-    &:after {
-        content: "";
-        display: table;
-    }
-    &:after {
-        clear: both;
-    }
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }

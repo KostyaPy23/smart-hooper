@@ -12,45 +12,52 @@ $desktop: 950px;
 $desktop-large: 1290px;
 
 .container {
-    margin: 0 auto;
-    padding: 0 15px;
-    @include breakpoint(medium)     { width: $tablet; }
-    @include breakpoint(desktop)    { width: $desktop; }
-    @include breakpoint(large)      { width: $desktop-large; }
+  margin: 0 auto;
+  padding: 0 15px;
+  @include breakpoint(medium) {
+    width: $tablet;
+  }
+  @include breakpoint(desktop) {
+    width: $desktop;
+  }
+  @include breakpoint(large) {
+    width: $desktop-large;
+  }
 }
 
 .tab-pane {
-    display: none;
-    visibility: hidden;
-    &.active {
-        display: block;
-        visibility: visible;
-    }
+  display: none;
+  visibility: hidden;
+  &.active {
+    display: block;
+    visibility: visible;
+  }
 }
 
 .info-block {
-    margin: 0 auto;
-    padding: 30px 40px;
-    width: 300px;
-    text-align: center;
-    @include breakpoint(medium) { width: 610px; }
+  margin: 0 auto;
+  padding: 30px 40px;
+  width: 300px;
+  text-align: center;
+  @include breakpoint(medium) {
+    width: 610px;
+  }
 
-    .info-block-header {
-        margin-bottom: 15px;
-    }
+  .info-block-header {
+    margin-bottom: 15px;
+  }
 
-    .info-block-title {
-        margin-top: 4px;
-        font-size: 20px;
-        font-weight: 700;
-    }
+  .info-block-title {
+    margin-top: 4px;
+    font-size: 20px;
+    font-weight: 700;
+  }
 }
-
 
 // Questions
 .question-area {
-    margin: 0 auto;
-    @include clearfix;
+  margin: 0 auto;
+  @include clearfix;
 }
 
 $step-passive-bg: #f1f1f1;
@@ -58,103 +65,123 @@ $step-active-bg: #f47920;
 $step-color: #ffffff;
 
 .question-area-entry {
-    width: 300px;
-    text-align: center;
-    margin: 0 auto 40px;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto 40px;
 
-    @include breakpoint(medium) { width: 500px; }
-    @include breakpoint(desktop) { width: 760px; }
+  @include breakpoint(medium) {
+    width: 500px;
+  }
+  @include breakpoint(desktop) {
+    width: 760px;
+  }
 
-    .question-img { margin-bottom: 22px; }
+  .question-img {
+    margin-bottom: 22px;
+  }
 
-    .steps {
+  .steps {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 0;
+    overflow: hidden;
+
+    .steps-item {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      a {
         display: block;
-        margin-bottom: 40px;
-        font-size: 0;
-        overflow: hidden;
-
-        .steps-item {
-            position: relative;
-            display: inline-block;
-            vertical-align: top;
-            a {
-                display: block;
-                width: 20px;
-                height: 20px;
-                font: 600 14px/21px Arial, sans-serif;
-                border-radius: 50%;
-                background: $step-passive-bg;
-                color: $step-color;
-                @include breakpoint(medium) {
-                    width: 50px;
-                    height: 50px;
-                    font: 600 18px/50px Arial, sans-serif;
-                }
-            }
-
-            &.active a { background: $step-active-bg; }
-
-            &:not(:last-of-type) {
-                &:after {
-                    display: none;
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    width: 90px;
-                    height: 4px;
-                    z-index: -1;
-                    background: $step-passive-bg;
-                    -webkit-transform: translateY(-50%);
-                    transform: translateY(-50%);
-                }
-                @include breakpoint(medium) {
-                    margin-right: 40px;
-                    &:after { display: block; }
-                }
-
-                @include breakpoint(desktop) {
-                    margin-right: 100px;
-                    &:after { width: 150px; }
-                }
-            }
+        width: 20px;
+        height: 20px;
+        font: 600 14px/21px Arial, sans-serif;
+        border-radius: 50%;
+        background: $step-passive-bg;
+        color: $step-color;
+        @include breakpoint(medium) {
+          width: 50px;
+          height: 50px;
+          font: 600 18px/50px Arial, sans-serif;
         }
+      }
+
+      &.active a {
+        background: $step-active-bg;
+      }
+
+      &:not(:last-of-type) {
+        &:after {
+          display: none;
+          content: "";
+          position: absolute;
+          top: 50%;
+          width: 90px;
+          height: 4px;
+          z-index: -1;
+          background: $step-passive-bg;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+        @include breakpoint(medium) {
+          margin-right: 40px;
+          &:after {
+            display: block;
+          }
+        }
+
+        @include breakpoint(desktop) {
+          margin-right: 100px;
+          &:after {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+
+  .question {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    .question-text {
+      font-size: 30px;
+    }
+    .question-hint {
+      font-size: 18px;
     }
 
-    .question {
-        font-family: Arial, sans-serif;
-        font-weight: 400;
-        .question-text { font-size: 30px; }
-        .question-hint { font-size: 18px; }
+    .variants {
+      margin-top: 40px;
+      @include clearfix;
 
-        .variants {
-            margin-top: 40px;
-            @include clearfix;
+      .left {
+        float: left;
+      }
+      .right {
+        float: right;
+      }
 
-            .left { float: left; }
-            .right { float: right; }
-
-            .variant-item {
-                display: inline-block;
-                img {
-                    padding: 3px;
-                    transition: all .35s ease-in-out;
-                }
-
-                .variant-caption {
-                    margin-top: 27px;
-                    display: block;
-                    font-family: Arial, sans-serif;
-                    font-size: 20px;
-                    font-weight: 700;
-                    color: #f47920;
-                }
-
-                &.selected img,
-                &:hover img {
-                    box-shadow: 0px 0px 8px #f47920;
-                }
-            }
+      .variant-item {
+        display: inline-block;
+        img {
+          padding: 3px;
+          transition: all .35s ease-in-out;
         }
+
+        .variant-caption {
+          margin-top: 27px;
+          display: block;
+          font-family: Arial, sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          color: #f47920;
+        }
+
+        &.selected img,
+        &:hover img {
+          box-shadow: 0px 0px 8px #f47920;
+        }
+      }
     }
+  }
 }
 
